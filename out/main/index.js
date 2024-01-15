@@ -8,6 +8,11 @@ function createWindow() {
     width: 1200,
     height: 900,
     show: false,
+    minHeight: 378,
+    minWidth: 500,
+    resizable: true,
+    // frame: false,
+    autoHideMenuBar: true,
     ...process.platform === "linux" ? { icon } : {},
     webPreferences: {
       preload: path.join(__dirname, "../preload/index.js"),
