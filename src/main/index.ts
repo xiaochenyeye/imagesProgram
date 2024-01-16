@@ -1,13 +1,14 @@
-import { app, shell, BrowserWindow, ipcMain } from 'electron'
+import { app, shell, BrowserWindow, ipcMain, globalShortcut } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
+import optionGroup from './optionGroup'
 
-function createWindow(): void {
+function createWindow(): BrowserWindow {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 1200,
-    height: 900,
+    width: 900,
+    height: 600,
     show: false,
     minHeight: 378,
     minWidth: 500,
@@ -38,6 +39,8 @@ function createWindow(): void {
   } else {
     mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
   }
+
+  return mainWindow
 }
 
 // This method will be called when Electron has finished
@@ -54,7 +57,13 @@ app.whenReady().then(() => {
     optimizer.watchWindowShortcuts(window)
   })
 
-  createWindow()
+  const mainWindow = createWindow()
+  // top button event
+  optionGroup(mainWindow)
+  // 注册全屏快捷键
+  globalShortcut.register('F11', () => {
+    // 阻止默认的 F11 全屏行为
+  });
 
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
@@ -67,6 +76,9 @@ app.whenReady().then(() => {
 // for applications and their menu bar to stay active until the user quits
 // explicitly with Cmd + Q.
 app.on('window-all-closed', () => {
+  // 注销全屏快捷键
+  globalShortcut.unregister('F11');
+  ipcMain.removeAllListeners();
   if (process.platform !== 'darwin') {
     app.quit()
   }

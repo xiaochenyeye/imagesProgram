@@ -6,7 +6,6 @@
     font-family: 'Alimama';
     src: url('./assets/font/AlibabaPuHuiTi-3-45-Light.otf');
     font-weight: 100;
-    
   }
 
 
@@ -15,4 +14,40 @@
     margin: 0;
     color: #D4D5D7;
     font-size: 14px;
+    user-select: none;
+}
+
+.hover-text {
+    position: relative;
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    to {
+      opacity: 1;
+      width: auto;
+      height: 24px;
+      /* transform: scale(1) translate(-50%, 150%); */
+    }
+  }
+
+.hover-text:hover::after {
+    content: attr(data-hover-text);
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    transform: translate(-50%, 0%);
+    padding: 4px;
+    border-radius: 4px;
+    height: 24px;
+    width: auto !important;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ffffff2a;
+    animation: fadeIn 0.3s ease;
+    white-space: nowrap;
 }

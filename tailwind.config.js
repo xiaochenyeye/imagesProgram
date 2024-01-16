@@ -5,6 +5,9 @@ module.exports = {
     extend: {},
     colors: {
       'black': '#303134',
+      'white': '#ffffff',
+      'ink': '#2A2B2F',
+      'hoverlight': '#ffffff0f'
     },
     fontFamily: {
       sans: ['Alimama', 'sans-serif'],

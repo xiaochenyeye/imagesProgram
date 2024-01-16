@@ -3,10 +3,15 @@ const electron = require("electron");
 const path = require("path");
 const utils = require("@electron-toolkit/utils");
 const icon = path.join(__dirname, "../../resources/icon.png");
+const optionGroup = (mainWindow) => {
+  electron.ipcMain.on("fullScreen", (_, value) => {
+    mainWindow.setFullScreen(value);
+  });
+};
 function createWindow() {
   const mainWindow = new electron.BrowserWindow({
-    width: 1200,
-    height: 900,
+    width: 900,
+    height: 600,
     show: false,
     minHeight: 378,
     minWidth: 500,
@@ -32,19 +37,25 @@ function createWindow() {
   } else {
     mainWindow.loadFile(path.join(__dirname, "../renderer/index.html"));
   }
+  return mainWindow;
 }
 electron.app.whenReady().then(() => {
   utils.electronApp.setAppUserModelId("com.electron");
   electron.app.on("browser-window-created", (_, window) => {
     utils.optimizer.watchWindowShortcuts(window);
   });
-  createWindow();
+  const mainWindow = createWindow();
+  optionGroup(mainWindow);
+  electron.globalShortcut.register("F11", () => {
+  });
   electron.app.on("activate", function() {
     if (electron.BrowserWindow.getAllWindows().length === 0)
       createWindow();
   });
 });
 electron.app.on("window-all-closed", () => {
+  electron.globalShortcut.unregister("F11");
+  electron.ipcMain.removeAllListeners();
   if (process.platform !== "darwin") {
     electron.app.quit();
   }
