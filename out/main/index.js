@@ -16,8 +16,10 @@ function createWindow() {
     minHeight: 378,
     minWidth: 500,
     resizable: true,
-    // frame: false,
+    frame: false,
+    titleBarStyle: "hidden",
     autoHideMenuBar: true,
+    trafficLightPosition: { x: 10, y: 13 },
     ...process.platform === "linux" ? { icon } : {},
     webPreferences: {
       preload: path.join(__dirname, "../preload/index.js"),
