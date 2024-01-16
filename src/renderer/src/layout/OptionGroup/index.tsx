@@ -14,7 +14,7 @@ function OptionGroup(): JSX.Element {
         <>
             <div className="px-3 py-2 flex items-center h-12 gap-1">
                 <div className="w-7 h-7 flex-1 justify-center items-center rounded" >
-                    <div className="hover:text-white hover:bg-hoverlight w-7 h-7 flex justify-center items-center rounded hover-text after:bg-black/[.975]" data-hover-text="折叠">
+                    <div className="hover:text-white hover:bg-hoverlight w-7 h-7 flex justify-center items-center rounded" >
                         <MenuOutlined className="text-xs" />
                     </div>
                 </div>
