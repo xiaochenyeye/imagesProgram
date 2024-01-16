@@ -7,8 +7,8 @@ module.exports = {
       'black': '#303134',
     },
     fontFamily: {
-      sans: ['Graphik', 'sans-serif'],
-      serif: ['Merriweather', 'serif'],
+      sans: ['Alimama', 'sans-serif'],
+      serif: ['Alimama', 'serif'],
     },
   },
   plugins: []
