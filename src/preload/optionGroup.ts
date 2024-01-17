@@ -1,21 +1,28 @@
-import { ipcRenderer } from "electron"
-
+import { ipcRenderer } from "electron";
 
 const setFullScreen = (value: boolean) => {
-    ipcRenderer.send('fullScreen', !!value)
-}
+  ipcRenderer.send("fullScreen", !!value);
+};
 
 const setMinimize = () => {
-    ipcRenderer.send('minimize')
-}
+  ipcRenderer.send("minimize");
+};
 
 const setMaximize = () => {
-    ipcRenderer.send('maximize')
-}
+  ipcRenderer.send("maximize");
+};
 const setClose = () => {
-    ipcRenderer.send('close')
-}
+  ipcRenderer.send("close");
+};
+
+const setAlwaysOnTop = () => {
+  return ipcRenderer.invoke("alwaysOnTop");
+};
 
 export default {
-    setFullScreen, setMinimize, setMaximize, setClose
-}
+  setFullScreen,
+  setMinimize,
+  setMaximize,
+  setClose,
+  setAlwaysOnTop,
+};

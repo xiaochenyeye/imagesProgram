@@ -1,10 +1,7 @@
 import LayOut from "./layout";
 
 function App(): JSX.Element {
-
-  return (
-    <LayOut />
-  )
+  return <LayOut />;
 }
 
-export default App
+export default App;

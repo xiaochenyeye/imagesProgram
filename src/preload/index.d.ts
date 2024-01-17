@@ -1,9 +1,9 @@
-import { ElectronAPI } from '@electron-toolkit/preload'
+import { ElectronAPI } from "@electron-toolkit/preload";
 
 declare global {
   interface Window {
-    electron: ElectronAPI
-    api: object
-    optionGroup: any
+    electron: ElectronAPI;
+    api: object;
+    optionGroup: any;
   }
 }

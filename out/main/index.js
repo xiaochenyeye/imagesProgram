@@ -20,6 +20,11 @@ const optionGroup = (mainWindow) => {
   electron.ipcMain.on("close", () => {
     mainWindow.close();
   });
+  electron.ipcMain.handle("alwaysOnTop", () => {
+    const alwaysOnTop = mainWindow.isAlwaysOnTop();
+    mainWindow.setAlwaysOnTop(!alwaysOnTop);
+    return !alwaysOnTop;
+  });
 };
 function createWindow() {
   const mainWindow = new electron.BrowserWindow({
@@ -33,11 +38,11 @@ function createWindow() {
     titleBarStyle: "hidden",
     autoHideMenuBar: true,
     trafficLightPosition: { x: 10, y: 13 },
-    ...process.platform === "linux" ? { icon } : {},
+    ...(process.platform === "linux" ? { icon } : {}),
     webPreferences: {
       preload: path.join(__dirname, "../preload/index.js"),
-      sandbox: false
-    }
+      sandbox: false,
+    },
   });
   mainWindow.on("ready-to-show", () => {
     mainWindow.show();
@@ -61,11 +66,9 @@ electron.app.whenReady().then(() => {
   });
   const mainWindow = createWindow();
   optionGroup(mainWindow);
-  electron.globalShortcut.register("F11", () => {
-  });
-  electron.app.on("activate", function() {
-    if (electron.BrowserWindow.getAllWindows().length === 0)
-      createWindow();
+  electron.globalShortcut.register("F11", () => {});
+  electron.app.on("activate", function () {
+    if (electron.BrowserWindow.getAllWindows().length === 0) createWindow();
   });
 });
 electron.app.on("window-all-closed", () => {

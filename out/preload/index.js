@@ -13,11 +13,15 @@ const setMaximize = () => {
 const setClose = () => {
   electron.ipcRenderer.send("close");
 };
+const setAlwaysOnTop = () => {
+  return electron.ipcRenderer.invoke("alwaysOnTop");
+};
 const optionGroup = {
   setFullScreen,
   setMinimize,
   setMaximize,
-  setClose
+  setClose,
+  setAlwaysOnTop,
 };
 const api = {};
 if (process.contextIsolated) {

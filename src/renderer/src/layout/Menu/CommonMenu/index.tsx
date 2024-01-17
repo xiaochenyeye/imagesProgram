@@ -1,8 +1,5 @@
 function CommonMenu(): JSX.Element {
-
-    return (
-        <>CommonMenu</>
-    )
+  return <>CommonMenu</>;
 }
 
-export default CommonMenu
+export default CommonMenu;

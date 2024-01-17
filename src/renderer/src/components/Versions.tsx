@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useState } from "react";
 
 function Versions(): JSX.Element {
-  return <ul className="versions"></ul>
+  return <ul className="versions"></ul>;
 }
 
-export default Versions
+export default Versions;

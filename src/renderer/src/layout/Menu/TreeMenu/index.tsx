@@ -1,8 +1,5 @@
 function TreeMenu(): JSX.Element {
-
-    return (
-        <>TreeMenu</>
-    )
+  return <>TreeMenu</>;
 }
 
-export default TreeMenu
+export default TreeMenu;

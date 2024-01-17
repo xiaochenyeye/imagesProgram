@@ -52,6 +52,23 @@
     white-space: nowrap;
 }
 
+.text-left:hover::after {
+  content: attr(data-hover-text);
+    position: absolute;
+    right: 100%;
+    top: 30px;
+    transform: translate(0%, 0%);
+    padding: 4px;
+    border-radius: 4px;
+    height: 24px;
+    width: auto !important;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ffffff2a;
+    animation: fadeIn 0.3s ease;
+    white-space: nowrap;
+}
+
 .drag-area::before {
     content: '';
     position: absolute;
