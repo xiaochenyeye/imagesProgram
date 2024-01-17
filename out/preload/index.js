@@ -4,8 +4,20 @@ const preload = require("@electron-toolkit/preload");
 const setFullScreen = (value) => {
   electron.ipcRenderer.send("fullScreen", !!value);
 };
+const setMinimize = () => {
+  electron.ipcRenderer.send("minimize");
+};
+const setMaximize = () => {
+  electron.ipcRenderer.send("maximize");
+};
+const setClose = () => {
+  electron.ipcRenderer.send("close");
+};
 const optionGroup = {
-  setFullScreen
+  setFullScreen,
+  setMinimize,
+  setMaximize,
+  setClose
 };
 const api = {};
 if (process.contextIsolated) {

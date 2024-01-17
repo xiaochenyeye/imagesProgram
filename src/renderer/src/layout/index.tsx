@@ -4,7 +4,6 @@ import {
 } from "react-router-dom";
 import Menu from './Menu';
 import router from '@renderer/routes/router';
-import { CmmButton } from './OptionGroup';
 
 function LayOut(): JSX.Element {
     const [isMac] = useState<boolean>(
@@ -12,12 +11,11 @@ function LayOut(): JSX.Element {
     );
     return (
         <StrictMode>
-            <div className='flex'>
+            <div className='flex overflow-hidden'>
                 <Menu isMac={isMac} />
                 <main className='flex-1 bg-black h-screen' style={{ borderLeft: '1px solid #2A2B2F', borderRight: '1px solid #2A2B2F' }}>
                     <RouterProvider router={router} />
                 </main>
-                <CmmButton isMac={isMac} />
             </div>
         </StrictMode>
     )

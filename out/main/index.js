@@ -7,6 +7,19 @@ const optionGroup = (mainWindow) => {
   electron.ipcMain.on("fullScreen", (_, value) => {
     mainWindow.setFullScreen(value);
   });
+  electron.ipcMain.on("minimize", () => {
+    mainWindow.minimize();
+  });
+  electron.ipcMain.on("maximize", () => {
+    if (mainWindow.isMaximized()) {
+      mainWindow.unmaximize();
+    } else {
+      mainWindow.maximize();
+    }
+  });
+  electron.ipcMain.on("close", () => {
+    mainWindow.close();
+  });
 };
 function createWindow() {
   const mainWindow = new electron.BrowserWindow({

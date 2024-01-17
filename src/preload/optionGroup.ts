@@ -5,7 +5,17 @@ const setFullScreen = (value: boolean) => {
     ipcRenderer.send('fullScreen', !!value)
 }
 
+const setMinimize = () => {
+    ipcRenderer.send('minimize')
+}
+
+const setMaximize = () => {
+    ipcRenderer.send('maximize')
+}
+const setClose = () => {
+    ipcRenderer.send('close')
+}
 
 export default {
-    setFullScreen
+    setFullScreen, setMinimize, setMaximize, setClose
 }

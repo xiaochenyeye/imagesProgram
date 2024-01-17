@@ -51,3 +51,18 @@
     animation: fadeIn 0.3s ease;
     white-space: nowrap;
 }
+
+.drag-area::before {
+    content: '';
+    position: absolute;
+    width: 100vw;
+    height: 42px;
+    background: transparent;
+    top: 0;
+    left: 0;
+    -webkit-app-region: drag;
+}
+
+.no-drag-area {
+    -webkit-app-region: no-drag;
+}
