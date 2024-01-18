@@ -10,12 +10,21 @@ const optionGroup = (mainWindow: BrowserWindow) => {
     mainWindow.minimize();
   });
 
-  ipcMain.on("maximize", () => {
-    if (mainWindow.isMaximized()) {
+  // 最大最小化
+  ipcMain.handle("maximize", () => {
+    const isMax = mainWindow.isMaximized()
+    if (isMax) {
       mainWindow.unmaximize();
     } else {
       mainWindow.maximize();
     }
+    return !isMax
+  });
+
+  // 取消最大化
+  mainWindow.on('unmaximize', () => {
+    // 向渲染进程发送消息
+    mainWindow.webContents.send('window-maximized', false);
   });
 
   ipcMain.on("close", () => {

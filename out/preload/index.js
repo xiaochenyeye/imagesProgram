@@ -8,7 +8,7 @@ const setMinimize = () => {
   electron.ipcRenderer.send("minimize");
 };
 const setMaximize = () => {
-  electron.ipcRenderer.send("maximize");
+  return electron.ipcRenderer.invoke("maximize");
 };
 const setClose = () => {
   electron.ipcRenderer.send("close");
@@ -21,7 +21,7 @@ const optionGroup = {
   setMinimize,
   setMaximize,
   setClose,
-  setAlwaysOnTop,
+  setAlwaysOnTop
 };
 const api = {};
 if (process.contextIsolated) {

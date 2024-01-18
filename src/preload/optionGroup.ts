@@ -9,7 +9,7 @@ const setMinimize = () => {
 };
 
 const setMaximize = () => {
-  ipcRenderer.send("maximize");
+  return ipcRenderer.invoke("maximize");
 };
 const setClose = () => {
   ipcRenderer.send("close");

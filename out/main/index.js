@@ -10,12 +10,17 @@ const optionGroup = (mainWindow) => {
   electron.ipcMain.on("minimize", () => {
     mainWindow.minimize();
   });
-  electron.ipcMain.on("maximize", () => {
-    if (mainWindow.isMaximized()) {
+  electron.ipcMain.handle("maximize", () => {
+    const isMax = mainWindow.isMaximized();
+    if (isMax) {
       mainWindow.unmaximize();
     } else {
       mainWindow.maximize();
     }
+    return !isMax;
+  });
+  mainWindow.on("unmaximize", () => {
+    mainWindow.webContents.send("window-maximized", false);
   });
   electron.ipcMain.on("close", () => {
     mainWindow.close();
@@ -38,11 +43,11 @@ function createWindow() {
     titleBarStyle: "hidden",
     autoHideMenuBar: true,
     trafficLightPosition: { x: 10, y: 13 },
-    ...(process.platform === "linux" ? { icon } : {}),
+    ...process.platform === "linux" ? { icon } : {},
     webPreferences: {
       preload: path.join(__dirname, "../preload/index.js"),
-      sandbox: false,
-    },
+      sandbox: false
+    }
   });
   mainWindow.on("ready-to-show", () => {
     mainWindow.show();
@@ -66,9 +71,11 @@ electron.app.whenReady().then(() => {
   });
   const mainWindow = createWindow();
   optionGroup(mainWindow);
-  electron.globalShortcut.register("F11", () => {});
-  electron.app.on("activate", function () {
-    if (electron.BrowserWindow.getAllWindows().length === 0) createWindow();
+  electron.globalShortcut.register("F11", () => {
+  });
+  electron.app.on("activate", function() {
+    if (electron.BrowserWindow.getAllWindows().length === 0)
+      createWindow();
   });
 });
 electron.app.on("window-all-closed", () => {
