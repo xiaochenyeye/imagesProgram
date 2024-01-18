@@ -83,3 +83,38 @@
 .no-drag-area {
     -webkit-app-region: no-drag;
 }
+
+.scroll-bar {
+  overflow: hidden;
+  width: calc(100% - 8px);
+}
+
+.scroll-bar:hover {
+  overflow-y: scroll;
+  width: calc(100%);
+}
+
+/* 修改滚动条的轨道 */
+::-webkit-scrollbar {
+  width: 7px; /* 设置滚动条宽度 */
+  box-sizing: border-box;
+}
+
+/* 修改滚动条的轨道区域 */
+::-webkit-scrollbar-track {
+  background-color: transparent; /* 设置轨道的背景颜色 */
+}
+
+/* 修改滚动条的滑块 */
+::-webkit-scrollbar-thumb {
+  box-sizing: content-box;
+  background-color: #797C84; /* 设置滑块的背景颜色 */
+  border-radius: 6px; /* 设置滑块的圆角 */
+  border: 2px solid #303134;
+}
+
+/* 当滚动条处于活动状态时（用户正在与滚动条交互） */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #94969C; /* 设置滑块的背景颜色 */
+  border: 2px solid transparent;
+}
