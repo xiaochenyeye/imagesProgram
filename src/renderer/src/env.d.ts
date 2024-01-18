@@ -6,3 +6,10 @@ declare global {
     }
   }
 }
+
+interface ButtonOptionProps {
+  isMac: boolean;
+  fullScreen?: boolean;
+}
+
+export default { ButtonOptionProps };

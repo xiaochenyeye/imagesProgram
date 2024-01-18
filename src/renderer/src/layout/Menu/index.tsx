@@ -1,8 +1,9 @@
 import { useState } from "react";
 import CommonMenu from "./CommonMenu";
 import OptionGroup from "../OptionGroup";
+import type { ButtonOptionProps } from "../../types";
 
-function Menu({ isMac }): JSX.Element {
+function Menu({ isMac }: ButtonOptionProps): JSX.Element {
   const [leftPanelWidth, setLeftPanelWidth] = useState<number>(200);
   const handleMouseDown = () => {
     document.addEventListener("mousemove", handleMouseMove);

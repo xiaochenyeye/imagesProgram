@@ -1,5 +1,5 @@
 function CommonMenu(): JSX.Element {
-  return <>CommonMenu</>;
+  return <>CommonMenu测试</>;
 }
 
 export default CommonMenu;
