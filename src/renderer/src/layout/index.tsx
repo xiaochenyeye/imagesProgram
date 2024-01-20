@@ -1,14 +1,15 @@
 import { useState } from "react";
 import Menu from "./Menu";
 import Main from "./Main";
+import Info from "./Info";
 
 function LayOut(): JSX.Element {
   const [isMac] = useState<boolean>(
-    window.electron.process.platform === "darwin",
+    window.electron.process.platform === "darwin"
   );
   return (
     <div className="flex overflow-hidden h-screen">
-      <Menu isMac={isMac} />
+      <Menu isMac={!isMac} />
       <main
         className="flex-1 bg-black h-screen overflow-hidden pt-8 pb-1"
         style={{
@@ -20,6 +21,7 @@ function LayOut(): JSX.Element {
           <Main />
         </div>
       </main>
+      <Info />
     </div>
   );
 }
