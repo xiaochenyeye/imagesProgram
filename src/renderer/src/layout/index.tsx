@@ -9,7 +9,7 @@ function LayOut(): JSX.Element {
   );
   return (
     <div className="flex overflow-hidden h-screen">
-      <Menu isMac={!isMac} />
+      <Menu isMac={isMac} />
       <main
         className="flex-1 bg-black h-screen overflow-hidden pt-8 pb-1"
         style={{
