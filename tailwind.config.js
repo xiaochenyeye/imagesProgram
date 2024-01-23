@@ -11,8 +11,8 @@ export const theme = {
     danger: "#EA1525",
   },
   fontFamily: {
-    sans: ["Chiny", "Alimama", "sans-serif"],
-    serif: ["Chiny", "Alimama", "serif"],
+    sans: ["Alimama", "sans-serif"],
+    serif: ["Alimama", "serif"],
   },
 };
 export const plugins = [];

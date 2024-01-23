@@ -1,3 +1,3 @@
-import SystemConfig from "./systemConfig";
+import PathArray from "./pathArray";
 
-export { SystemConfig };
+export { PathArray };

@@ -19,7 +19,7 @@ function Menu({ isMac }: ButtonOptionProps): JSX.Element {
   return (
     <>
       <nav
-        className="bg-black/[.975] flex flex-col min-w-48 max-w-lg "
+        className="bg-black/[.975] flex flex-col min-w-48 max-w-lg p-3"
         style={{ resize: "horizontal", width: leftPanelWidth }}
       >
         <OptionGroup isMac={isMac} />
