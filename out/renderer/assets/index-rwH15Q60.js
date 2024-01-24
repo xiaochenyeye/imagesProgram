@@ -7569,9 +7569,6 @@ var m$1 = reactDomExports;
   client.createRoot = m$1.createRoot;
   client.hydrateRoot = m$1.hydrateRoot;
 }
-function CommonMenu() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: "CommonMenu" });
-}
 var IconContext = /* @__PURE__ */ reactExports.createContext({});
 const Context$1 = IconContext;
 function _extends() {
@@ -8759,6 +8756,15 @@ Icon$2.displayName = "AntdIcon";
 Icon$2.getTwoToneColor = getTwoToneColor;
 Icon$2.setTwoToneColor = setTwoToneColor;
 const AntdIcon = Icon$2;
+var ContainerOutlined$2 = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M832 64H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V96c0-17.7-14.3-32-32-32zm-40 824H232V687h97.9c11.6 32.8 32 62.3 59.1 84.7 34.5 28.5 78.2 44.3 123 44.3s88.5-15.7 123-44.3c27.1-22.4 47.5-51.9 59.1-84.7H792v-63H643.6l-5.2 24.7C626.4 708.5 573.2 752 512 752s-114.4-43.5-126.5-103.3l-5.2-24.7H232V136h560v752zM320 341h384c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H320c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8zm0 160h384c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H320c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8z" } }] }, "name": "container", "theme": "outlined" };
+const ContainerOutlinedSvg = ContainerOutlined$2;
+var ContainerOutlined = function ContainerOutlined2(props, ref2) {
+  return /* @__PURE__ */ reactExports.createElement(AntdIcon, _extends({}, props, {
+    ref: ref2,
+    icon: ContainerOutlinedSvg
+  }));
+};
+const ContainerOutlined$1 = /* @__PURE__ */ reactExports.forwardRef(ContainerOutlined);
 var FullscreenExitOutlined$2 = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M391 240.9c-.8-6.6-8.9-9.4-13.6-4.7l-43.7 43.7L200 146.3a8.03 8.03 0 00-11.3 0l-42.4 42.3a8.03 8.03 0 000 11.3L280 333.6l-43.9 43.9a8.01 8.01 0 004.7 13.6L401 410c5.1.6 9.5-3.7 8.9-8.9L391 240.9zm10.1 373.2L240.8 633c-6.6.8-9.4 8.9-4.7 13.6l43.9 43.9L146.3 824a8.03 8.03 0 000 11.3l42.4 42.3c3.1 3.1 8.2 3.1 11.3 0L333.7 744l43.7 43.7A8.01 8.01 0 00391 783l18.9-160.1c.6-5.1-3.7-9.4-8.8-8.8zm221.8-204.2L783.2 391c6.6-.8 9.4-8.9 4.7-13.6L744 333.6 877.7 200c3.1-3.1 3.1-8.2 0-11.3l-42.4-42.3a8.03 8.03 0 00-11.3 0L690.3 279.9l-43.7-43.7a8.01 8.01 0 00-13.6 4.7L614.1 401c-.6 5.2 3.7 9.5 8.8 8.9zM744 690.4l43.9-43.9a8.01 8.01 0 00-4.7-13.6L623 614c-5.1-.6-9.5 3.7-8.9 8.9L633 783.1c.8 6.6 8.9 9.4 13.6 4.7l43.7-43.7L824 877.7c3.1 3.1 8.2 3.1 11.3 0l42.4-42.3c3.1-3.1 3.1-8.2 0-11.3L744 690.4z" } }] }, "name": "fullscreen-exit", "theme": "outlined" };
 const FullscreenExitOutlinedSvg = FullscreenExitOutlined$2;
 var FullscreenExitOutlined = function FullscreenExitOutlined2(props, ref2) {
@@ -8909,6 +8915,34 @@ reactIs_production_min.typeOf = v;
   reactIs.exports = reactIs_production_min;
 }
 var reactIsExports = reactIs.exports;
+function CommonMenu() {
+  const [active, setActive] = reactExports.useState(0);
+  const handleClick = (index) => {
+    setActive(index);
+  };
+  const styles = (index) => `h-8 p-2 ${index === active ? "bg-lightash" : "hover:bg-lightash/[.5]"} rounded-lg flex items-center`;
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles(0), onClick: () => handleClick(0), children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ContainerOutlined$1, { className: "mr-1.5" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 flex justify-between mt-0.5", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex items-center text-center", children: "全部" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "10" })
+      ] })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles(1), onClick: () => handleClick(1), children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "最近使用" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "10" })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles(2), onClick: () => handleClick(2), children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "我的收藏" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "10" })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles(3), onClick: () => handleClick(3), children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "回收站" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "10" })
+    ] })
+  ] });
+}
 var Icon$1 = {};
 var ref = {};
 var interopRequireDefault = { exports: {} };
@@ -9748,59 +9782,86 @@ const MinimizeIcon = (props) => /* @__PURE__ */ jsxRuntimeExports.jsx(Icon, { co
 const MaximizeIcon = (props) => /* @__PURE__ */ jsxRuntimeExports.jsx(Icon, { component: Minimize, ...props });
 const CloseIcon = (props) => /* @__PURE__ */ jsxRuntimeExports.jsx(Icon, { component: Close, ...props });
 const MinimizetionIcon = (props) => /* @__PURE__ */ jsxRuntimeExports.jsx(Icon, { component: Minimizetion, ...props });
-function CmmButton({ isMac, fullScreen }) {
+const DingIconOption = ({ isMac }) => {
   const [isAlwaysOnTop, setAlwaysOnTop] = reactExports.useState(false);
-  const [isMax, setIsXax] = reactExports.useState(false);
   const handleAlwaysOnTop = async () => {
     setAlwaysOnTop(await window.optionGroup.setAlwaysOnTop());
   };
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "div",
+    {
+      onClick: handleAlwaysOnTop,
+      "data-hover-text": "钉在桌面",
+      className: `no-drag-area ${isMac ? "text-left" : "hover-text"} after:bg-black/[.975] ${isAlwaysOnTop ? "fill-hoverlight/[.66] bg-hoverlight" : "fill-lightash"} hover:fill-hoverlight/[.66] hover:text-white hover:bg-hoverlight w-5 h-5 mr-1 rounded flex justify-center items-center`,
+      children: /* @__PURE__ */ jsxRuntimeExports.jsx(DingIcon, { className: "no-drag-area" })
+    }
+  );
+};
+const MinimizeIconOption = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
+  "div",
+  {
+    onClick: window.optionGroup.setMinimize,
+    className: "no-drag-area hover:text-white hover:bg-hoverlight flex-1 h-8 flex justify-center items-center fill-hoverlight/[.66] hover:fill-hoverlight/[2]",
+    children: /* @__PURE__ */ jsxRuntimeExports.jsx(MinimizeIcon, {})
+  }
+);
+const MaximizeIconOption = () => {
+  const [isMax, setIsXax] = reactExports.useState(false);
   const handleSetMaximize = async () => {
     setIsXax(await window.optionGroup.setMaximize());
   };
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: !fullScreen && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
     "div",
     {
-      className: `absolute top-0 right-0 ${isMac ? "w-8" : "w-40"} h-8 flex justify-center items-center`,
-      children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1/[2] h-8 flex justify-self-center items-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "div",
-          {
-            onClick: handleAlwaysOnTop,
-            "data-hover-text": "钉在桌面",
-            className: `no-drag-area ${isMac ? "text-left" : "hover-text"} after:bg-black/[.975] ${isAlwaysOnTop ? "fill-hoverlight/[.66] bg-hoverlight" : "fill-lightash"} hover:fill-hoverlight/[.66] hover:text-white hover:bg-hoverlight w-5 h-5 mr-1 rounded flex justify-center items-center`,
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx(DingIcon, { className: "no-drag-area" })
-          }
-        ) }),
-        !isMac && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "div",
-            {
-              onClick: window.optionGroup.setMinimize,
-              className: "no-drag-area hover:text-white hover:bg-hoverlight flex-1 h-8 flex justify-center items-center fill-hoverlight/[.66] hover:fill-hoverlight/[2]",
-              children: /* @__PURE__ */ jsxRuntimeExports.jsx(MinimizeIcon, {})
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "div",
-            {
-              onClick: handleSetMaximize,
-              className: "no-drag-area hover:text-white hover:bg-hoverlight flex-1 h-8  flex justify-center items-center fill-hoverlight/[.66] hover:fill-hoverlight/[2]",
-              children: !isMax ? /* @__PURE__ */ jsxRuntimeExports.jsx(MaximizeIcon, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(MinimizetionIcon, {})
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "div",
-            {
-              onClick: window.optionGroup.setClose,
-              className: "no-drag-area hover:text-white hover:bg-danger flex-1 h-8  flex justify-center items-center fill-hoverlight/[.66] hover:fill-hoverlight/[2]",
-              children: /* @__PURE__ */ jsxRuntimeExports.jsx(CloseIcon, {})
-            }
-          )
-        ] })
-      ]
+      onClick: handleSetMaximize,
+      className: "no-drag-area hover:text-white hover:bg-hoverlight flex-1 h-8  flex justify-center items-center fill-hoverlight/[.66] hover:fill-hoverlight/[2]",
+      children: !isMax ? /* @__PURE__ */ jsxRuntimeExports.jsx(MaximizeIcon, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(MinimizetionIcon, {})
     }
-  ) });
-}
+  );
+};
+const CloseIconOption = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
+  "div",
+  {
+    onClick: window.optionGroup.setClose,
+    className: "no-drag-area hover:text-white hover:bg-danger flex-1 h-8  flex justify-center items-center fill-hoverlight/[.66] hover:fill-hoverlight/[2]",
+    children: /* @__PURE__ */ jsxRuntimeExports.jsx(CloseIcon, {})
+  }
+);
+const FullIconOption = ({ fullScreen, handleFullScreen }) => {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "div",
+    {
+      onClick: handleFullScreen,
+      className: "no-drag-area hover:text-white hover:bg-hoverlight w-7 h-7 flex justify-center items-center rounded hover-text after:bg-black/[.975]",
+      "data-hover-text": fullScreen ? "缩小" : "全屏",
+      children: fullScreen ? /* @__PURE__ */ jsxRuntimeExports.jsx(FullscreenExitOutlined$1, { className: "text-xs" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(FullscreenOutlined$1, { className: "text-xs" })
+    }
+  );
+};
+const AddIconOption = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
+  "div",
+  {
+    className: "no-drag-area hover:text-white hover:bg-hoverlight w-7 h-7 flex justify-center items-center rounded hover-text after:bg-black/[.975]",
+    "data-hover-text": "添加",
+    children: /* @__PURE__ */ jsxRuntimeExports.jsx(PlusOutlined$1, { className: "text-xs" })
+  }
+);
+const SwapIconOption = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
+  "div",
+  {
+    className: "no-drag-area hover:text-white hover:bg-hoverlight w-7 h-7 flex justify-center items-center rounded hover-text after:bg-black/[.975]",
+    "data-hover-text": "未开放",
+    children: /* @__PURE__ */ jsxRuntimeExports.jsx(SwapOutlined$1, { className: "text-xs" })
+  }
+);
+const MenuOutIconOption = ({ isMac }) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-7 h-7 flex-1 justify-center items-center rounded", children: !isMac && /* @__PURE__ */ jsxRuntimeExports.jsx(
+  "div",
+  {
+    "data-hover-text": "功能",
+    className: "no-drag-area hover-text after:bg-black/[.975] hover:text-white hover:bg-hoverlight w-7 h-7 flex justify-center items-center",
+    children: /* @__PURE__ */ jsxRuntimeExports.jsx(MenuOutlined$1, { className: "text-xs" })
+  }
+) });
 function OptionGroup({ isMac }) {
   const [fullScreen, setFullScreen] = reactExports.useState(false);
   const handleFullScreen = () => {
@@ -9809,41 +9870,31 @@ function OptionGroup({ isMac }) {
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-3 py-2 flex items-center h-12 gap-1 drag-area", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-7 h-7 flex-1 justify-center items-center rounded", children: !isMac && /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "div",
-        {
-          "data-hover-text": "功能",
-          className: "no-drag-area hover-text after:bg-black/[.975] hover:text-white hover:bg-hoverlight w-7 h-7 flex justify-center items-center",
-          children: /* @__PURE__ */ jsxRuntimeExports.jsx(MenuOutlined$1, { className: "text-xs" })
-        }
-      ) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(MenuOutIconOption, { isMac }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SwapIconOption, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(AddIconOption, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "div",
+        FullIconOption,
         {
-          className: "no-drag-area hover:text-white hover:bg-hoverlight w-7 h-7 flex justify-center items-center rounded hover-text after:bg-black/[.975]",
-          "data-hover-text": "未开放",
-          children: /* @__PURE__ */ jsxRuntimeExports.jsx(SwapOutlined$1, { className: "text-xs" })
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "div",
-        {
-          className: "no-drag-area hover:text-white hover:bg-hoverlight w-7 h-7 flex justify-center items-center rounded hover-text after:bg-black/[.975]",
-          "data-hover-text": "添加",
-          children: /* @__PURE__ */ jsxRuntimeExports.jsx(PlusOutlined$1, { className: "text-xs" })
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "div",
-        {
-          onClick: handleFullScreen,
-          className: "no-drag-area hover:text-white hover:bg-hoverlight w-7 h-7 flex justify-center items-center rounded hover-text after:bg-black/[.975]",
-          "data-hover-text": fullScreen ? "缩小" : "全屏",
-          children: fullScreen ? /* @__PURE__ */ jsxRuntimeExports.jsx(FullscreenExitOutlined$1, { className: "text-xs" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(FullscreenOutlined$1, { className: "text-xs" })
+          fullScreen,
+          handleFullScreen
         }
       )
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(CmmButton, { isMac, fullScreen })
+    !fullScreen && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        className: `absolute top-0 right-0 ${isMac ? "w-8" : "w-40"} h-8 flex justify-center items-center`,
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1/[2] h-8 flex justify-self-center items-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(DingIconOption, { isMac }) }),
+          !isMac && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(MinimizeIconOption, {}),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(MaximizeIconOption, {}),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(CloseIconOption, {})
+          ] })
+        ]
+      }
+    )
   ] });
 }
 function Menu({ isMac }) {
@@ -9861,7 +9912,7 @@ function Menu({ isMac }) {
     /* @__PURE__ */ jsxRuntimeExports.jsxs(
       "nav",
       {
-        className: "bg-black/[.975] flex flex-col min-w-48 max-w-lg ",
+        className: "bg-black/[.975] flex flex-col min-w-48 max-w-lg pl-3 pr-3",
         style: { resize: "horizontal", width: leftPanelWidth },
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(OptionGroup, { isMac }),
@@ -9878,23 +9929,71 @@ function Menu({ isMac }) {
     )
   ] });
 }
+function Main() {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap gap-10", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "../../assets/wdgk.png", className: "w-40 h-40" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "../../assets/wdgk.png", className: "w-40 h-40" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "../../assets/wdgk.png", className: "w-40 h-40" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "../../assets/wdgk.png", className: "w-40 h-40" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "../../assets/wdgk.png", className: "w-40 h-40" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "../../assets/wdgk.png", className: "w-40 h-40" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "../../assets/wdgk.png", className: "w-40 h-40" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "../../assets/wdgk.png", className: "w-40 h-40" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "../../assets/wdgk.png", className: "w-40 h-40" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "../../assets/wdgk.png", className: "w-40 h-40" })
+  ] }) });
+}
+let currentX = 0;
+function Info() {
+  const [rightWidth, setRightWidth] = reactExports.useState(200);
+  const handleMouseDown = (event) => {
+    currentX = event.screenX;
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+    });
+  };
+  const handleMouseMove = (event) => {
+    const MIN_WIDTH = 168, MAX_WIDTH = 448;
+    const dif = rightWidth - (event.screenX - currentX);
+    setRightWidth(Math.min(MAX_WIDTH, Math.max(MIN_WIDTH, dif)));
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        onMouseDown: handleMouseDown,
+        className: "w-1 cursor-col-resize bg-black/[.975]"
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        className: `bg-black/[0.978] pt-8 min-w-48 max-w-lg`,
+        style: { width: rightWidth },
+        children: "111"
+      }
+    )
+  ] });
+}
 function LayOut() {
   const [isMac] = reactExports.useState(
     window.electron.process.platform === "darwin"
   );
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex overflow-hidden", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex overflow-hidden h-screen", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Menu, { isMac }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       "main",
       {
-        className: "flex-1 bg-black h-screen",
+        className: "flex-1 bg-black h-screen overflow-hidden pt-8 pb-1",
         style: {
           borderLeft: "1px solid #2A2B2F",
           borderRight: "1px solid #2A2B2F"
         },
-        children: "aaa"
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full relative h-full scroll-bar", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Main, {}) })
       }
-    )
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Info, {})
   ] });
 }
 function App() {

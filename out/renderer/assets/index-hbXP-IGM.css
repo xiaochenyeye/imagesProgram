@@ -495,6 +495,9 @@ video {
 .absolute {
   position: absolute;
 }
+.relative {
+  position: relative;
+}
 .right-0 {
   right: 0px;
 }
@@ -503,6 +506,15 @@ video {
 }
 .mr-1 {
   margin-right: 0.25rem;
+}
+.mr-1\.5 {
+  margin-right: 0.375rem;
+}
+.mt-0 {
+  margin-top: 0px;
+}
+.mt-0\.5 {
+  margin-top: 0.125rem;
 }
 .flex {
   display: flex;
@@ -513,6 +525,9 @@ video {
 .h-12 {
   height: 3rem;
 }
+.h-40 {
+  height: 10rem;
+}
 .h-5 {
   height: 1.25rem;
 }
@@ -521,6 +536,9 @@ video {
 }
 .h-8 {
   height: 2rem;
+}
+.h-full {
+  height: 100%;
 }
 .h-screen {
   height: 100vh;
@@ -540,6 +558,9 @@ video {
 .w-8 {
   width: 2rem;
 }
+.w-full {
+  width: 100%;
+}
 .min-w-48 {
   min-width: 12rem;
 }
@@ -558,14 +579,23 @@ video {
 .flex-col {
   flex-direction: column;
 }
+.flex-wrap {
+  flex-wrap: wrap;
+}
 .items-center {
   align-items: center;
 }
 .justify-center {
   justify-content: center;
 }
+.justify-between {
+  justify-content: space-between;
+}
 .gap-1 {
   gap: 0.25rem;
+}
+.gap-10 {
+  gap: 2.5rem;
 }
 .justify-self-center {
   justify-self: center;
@@ -576,6 +606,9 @@ video {
 .rounded {
   border-radius: 0.25rem;
 }
+.rounded-lg {
+  border-radius: 0.5rem;
+}
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(48 49 52 / var(--tw-bg-opacity));
@@ -583,14 +616,24 @@ video {
 .bg-black\/\[\.975\] {
   background-color: rgb(48 49 52 / .975);
 }
+.bg-black\/\[0\.978\] {
+  background-color: rgb(48 49 52 / 0.978);
+}
 .bg-hoverlight {
   background-color: #ffffff0f;
+}
+.bg-lightash {
+  --tw-bg-opacity: 1;
+  background-color: rgb(78 79 82 / var(--tw-bg-opacity));
 }
 .fill-hoverlight\/\[\.66\] {
   fill: rgb(255 255 255 / .66);
 }
 .fill-lightash {
   fill: #4E4F52;
+}
+.p-2 {
+  padding: 0.5rem;
 }
 .px-3 {
   padding-left: 0.75rem;
@@ -600,8 +643,23 @@ video {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
+.pb-1 {
+  padding-bottom: 0.25rem;
+}
+.pl-3 {
+  padding-left: 0.75rem;
+}
+.pr-3 {
+  padding-right: 0.75rem;
+}
+.pt-8 {
+  padding-top: 2rem;
+}
 .text-left {
   text-align: left;
+}
+.text-center {
+  text-align: center;
 }
 .text-xs {
   font-size: 0.75rem;
@@ -611,6 +669,12 @@ video {
 @font-face {
     font-family: 'Alimama';
     src: url('./AlibabaPuHuiTi-3-45-Light-e7qTYTX8.otf');
+    font-weight: 100;
+  }
+
+  @font-face {
+    font-family: 'Chiny';
+    src: url('./Chiny-nFT8_owB.ttf');
     font-weight: 100;
   }
 
@@ -628,6 +692,7 @@ video {
 .hover-text {
     position: relative;
 }
+
 
 @keyframes fadeIn {
     from {
@@ -692,28 +757,60 @@ video {
     -webkit-app-region: no-drag;
 }
 
+.scroll-bar {
+  overflow: hidden;
+  width: calc(100% - 8px);
+}
+
+.scroll-bar:hover {
+  overflow-y: scroll;
+  width: calc(100%);
+}
+
+/* 修改滚动条的轨道 */
+::-webkit-scrollbar {
+  width: 7px; /* 设置滚动条宽度 */
+  box-sizing: border-box;
+}
+
+/* 修改滚动条的轨道区域 */
+::-webkit-scrollbar-track {
+  background-color: transparent; /* 设置轨道的背景颜色 */
+}
+
+/* 修改滚动条的滑块 */
+::-webkit-scrollbar-thumb {
+  box-sizing: content-box;
+  background-color: #797C84; /* 设置滑块的背景颜色 */
+  border-radius: 6px; /* 设置滑块的圆角 */
+  border: 2px solid #303134;
+}
+
+/* 当滚动条处于活动状态时（用户正在与滚动条交互） */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #94969C; /* 设置滑块的背景颜色 */
+  border: 2px solid transparent;
+}
 .after\:bg-black\/\[\.975\]::after {
   content: var(--tw-content);
   background-color: rgb(48 49 52 / .975);
 }
-
 .hover\:bg-danger:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(234 21 37 / var(--tw-bg-opacity));
 }
-
 .hover\:bg-hoverlight:hover {
   background-color: #ffffff0f;
 }
-
+.hover\:bg-lightash\/\[\.5\]:hover {
+  background-color: rgb(78 79 82 / .5);
+}
 .hover\:fill-hoverlight\/\[\.66\]:hover {
   fill: rgb(255 255 255 / .66);
 }
-
 .hover\:fill-hoverlight\/\[2\]:hover {
   fill: rgb(255 255 255 / 2);
 }
-
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(224 224 225 / var(--tw-text-opacity));
